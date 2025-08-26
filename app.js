@@ -1,0 +1,1 @@
+// Código JS completo con todos los módulos, búsquedas, drawers, gestor de links y CSV/PDF export.
