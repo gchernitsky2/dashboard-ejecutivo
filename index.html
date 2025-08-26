@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Property Management — Sistema Completo</title>
+<meta name="color-scheme" content="light dark" />
+<link rel="stylesheet" href="app.css" />
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="logo" aria-hidden="true"></div>
+      <div>
+        <h1>Property Management</h1>
+        <div class="muted">Sistema interconectado</div>
+      </div>
+    </div>
+    <nav class="nav" id="nav">
+      <a class="nav-item" data-route="overview">📊 Resumen</a>
+      <a class="nav-item" data-route="properties">🏢 Propiedades</a>
+      <a class="nav-item" data-route="tenants">👥 Inquilinos</a>
+      <a class="nav-item" data-route="contracts">📜 Contratos</a>
+      <a class="nav-item" data-route="finance">💰 Finanzas</a>
+      <a class="nav-item" data-route="maintenance">🛠️ Mantenimiento</a>
+      <a class="nav-item" data-route="insurances">🛡️ Seguros</a>
+      <a class="nav-item" data-route="services-water">🚰 Agua</a>
+      <a class="nav-item" data-route="services-power">💡 Luz</a>
+      <a class="nav-item" data-route="reports">📈 Reportes</a>
+      <a class="nav-item" data-route="documents">📂 Documentos</a>
+      <a class="nav-item" data-route="deeds">📘 Escrituras</a>
+      <a class="nav-item" data-route="paperwork">📝 Trámites</a>
+      <a class="nav-item" data-route="accounting">📒 Contabilidad</a>
+      <a class="nav-item" data-route="taxes">🏛️ Prediales</a>
+      <a class="nav-item" data-route="tasks">✅ Tareas</a>
+    </nav>
+    <div class="sidebar-foot">
+      <button id="btn-print" class="btn full">🖨️ Exportar a PDF</button>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div class="search">
+        <input id="q" type="search" placeholder="Buscar contratos, propiedades, inquilinos, pólizas..." />
+        <button id="btn-search" class="btn">Buscar</button>
+      </div>
+      <div class="actions">
+        <button id="btn-theme" class="btn">🌗 Tema</button>
+        <button id="btn-linker" class="btn">🔗 Conectar/Linkear archivos</button>
+        <button id="btn-export" class="btn">⤴️ Exportar config</button>
+        <label class="btn" for="import-json" style="cursor:pointer;">⤵️ Importar config</label>
+        <input id="import-json" type="file" accept="application/json" hidden />
+      </div>
+    </header>
+
+    <section id="view" class="view" aria-live="polite"></section>
+    <footer class="foot">© 2025 — Sistema de ejemplo. Todos los botones navegan, abren detalle, descargan CSV o imprimen.</footer>
+  </main>
+</div>
+
+<!-- Drawer -->
+<aside id="drawer" class="drawer" aria-hidden="true">
+  <div class="drawer-panel">
+    <div class="drawer-head">
+      <h3 id="drawer-title">Detalle</h3>
+      <button id="drawer-close" class="icon">✖</button>
+    </div>
+    <div id="drawer-body" class="drawer-body"></div>
+  </div>
+</aside>
+
+<!-- Modal Link Manager -->
+<div id="modal" class="modal" aria-hidden="true">
+  <div class="panel" role="dialog" aria-modal="true" aria-labelledby="lm-title">
+    <div class="panel-head">
+      <h3 id="lm-title" style="margin:0;font-size:16px">Conectar/Linkear archivos</h3>
+      <button id="lm-close" class="btn">Cerrar</button>
+    </div>
+    <div class="panel-body" id="lm-body"></div>
+    <div class="panel-foot">
+      <button id="lm-save" class="btn">💾 Guardar cambios</button>
+    </div>
+  </div>
+</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
